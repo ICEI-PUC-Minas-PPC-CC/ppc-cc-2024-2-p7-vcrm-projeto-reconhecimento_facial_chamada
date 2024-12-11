@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognizer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Usuários Reconhecidos</h1>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Nome do Usuário</th>
+                    <th>Reconhecido</th>
+                    <th>Data e Hora da Coleta</th>
+                    <th>Número de Matrícula</th>
+                    <th>Sobrenome</th>
+                    <th>Período/Semestre</th>
+                    <th>Curso</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user, data in users.items() %}
+                <tr>
+                    <td>{{ user }}</td>
+                    <td>{{ 'Sim' if data['recognized'] else 'Não' }}</td>
+                    <td>{{ data['datetime'] }}</td>
+                    <td>{{ data['matricula'] }}</td>
+                    <td>{{ data['sobrenome'] }}</td>
+                    <td>{{ data['periodo'] }}</td>
+                    <td>{{ data.get('curso', 'N/A') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/export" class="btn btn-primary mt-3">Exportar Dados</a>
+    </div>
+</body>
+</html>
