@@ -1,42 +1,51 @@
-# TÍTULO DO PROJETO
+# Chamada de Presença Automatizada Utilizando Reconhecimento Facial e Visão Computacional
 
 `PPC-CC: PUC Poços de Caldas - Ciência da Computação`
-`Disciplina: NOME DA DISCIPLINA`
-`2021 - Semestre 1`
+`Disciplina: Visão Computacional e Realidade Misturada`
+`2024 - Semestre 2`
 
 ## Integrantes
 
-- Jeff Bezos
-- Bill Gates
-- Larry Ellison
-- Mark Zuckerberg
+- Lucca Pagin Barbosa Rios
+- Nicole Carvalho Lisboa
 
 ## Professor
 
-- Mestre Yoda
+- Will Ricardo dos Santos Machado
 
-# Documentação
+## **1. Descrição Geral**
+Este projeto tem como objetivo desenvolver um sistema de controle de presença automatizado para ambientes acadêmicos utilizando visão computacional e reconhecimento facial. Ele visa substituir métodos tradicionais como a chamada manual e listas de presença, promovendo eficiência, precisão e modernização.
 
-<ol>
-<li><a href="docs/1-Documentação de Contexto.md"> Documentação de Contexto</a></li>
-<li><a href="docs/2-Especificação do Projeto.md"> Especificação do Projeto</a></li>
-<li><a href="docs/3-Projeto de Interface.md"> Projeto de Interface</a></li>
-<li><a href="docs/4-Metodologia.md"> Metodologia</a></li>
-<li><a href="docs/5-Arquitetura da Solução.md"> Arquitetura da Solução</a></li>
-<li><a href="docs/6-Template padrão do Site.md"> Template padrão do Site</a></li>
-<li><a href="docs/7-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
-<li><a href="docs/8-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
-<li><a href="docs/9-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
-<li><a href="docs/10-Plano de Testes de Usabilidade.md"> Plano de Testes de Usabilidade</a></li>
-<li><a href="docs/11-Registro de Testes de Usabilidade.md"> Registro de Testes de Usabilidade</a></li>
-<li><a href="docs/12-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
-<li><a href="docs/13-Referências.md"> Referências</a></li>
-</ol>
+O sistema fará uso de câmeras estrategicamente posicionadas para capturar imagens em tempo real, identificar alunos e registrar suas presenças em um banco de dados centralizado. Será projetado para ser intuitivo e acessível tanto para professores quanto para alunos, contribuindo para um ambiente de aprendizado mais tecnológico e prático.
 
-# Código
+---
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+## **2. Ferramentas Tecnológicas**
 
-# Apresentação
+### **Linguagens e Bibliotecas**
+- **Python**: Escolhida por sua robustez em bibliotecas de visão computacional e aprendizado de máquina.
+- **OpenCV**: Para captura e pré-processamento de imagens, detecção facial e manipulação de dados visuais.
+- **Face Recognition**: Para geração e comparação de embeddings faciais com alta precisão.
+- **Flask**: Framework para a construção de uma interface web simples para visualização e gerenciamento de presenças.
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+---
+
+## **3. Requisitos de Instalação**
+Para instalar as dependências necessárias, execute o seguinte comando:
+
+```bash
+pip install pillow opencv-python opencv-contrib-python flask
+```
+
+---
+
+## **4. Ordem de Execução**
+1. **`face_taker.py`**: Rode este script para capturar as fotos. Aperte **`c`** para tirar as fotos.
+2. **`face_train.py`**: Execute este script para treinar o modelo com as fotos capturadas.
+3. **`face_recognizer.py`**: Inicie este script para realizar o reconhecimento facial.
+
+Ao rodar o último script, um link será exibido no terminal. Clique nele para acessar a interface do sistema.
+
+
+## **5. Exportação de Dados**
+É possível exportar os registros de presença para um arquivo no formato **CSV**, facilitando a análise e o compartilhamento dos dados.
