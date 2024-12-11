@@ -46,6 +46,22 @@ pip install pillow opencv-python opencv-contrib-python flask
 
 Ao rodar o último script, um link será exibido no terminal. Clique nele para acessar a interface do sistema.
 
+---
+## **5. Detalhes de Funcionamento**
 
-## **5. Exportação de Dados**
-É possível exportar os registros de presença para um arquivo no formato **CSV**, facilitando a análise e o compartilhamento dos dados.
+### **Aquisição de Dados**
+- As imagens são capturadas manualmente por meio do script **`face_taker.py`**.
+- O usuário deve pressionar a tecla **`c`** para registrar cada imagem.
+
+### **Registro de Presenças**
+- Durante o reconhecimento, o sistema registra os dados no formato **`.log`**, incluindo a data e hora exatas (formato `dd:mm:yyyy hh:mm:ss`).
+- Caso uma pessoa seja reconhecida dentro de um intervalo de tempo predefinido, sua presença não será registrada novamente, evitando duplicatas.
+
+### **Prevenção de Duplicatas**
+- O sistema verifica se a mesma pessoa foi reconhecida em um curto intervalo de tempo. Se sim, o registro é ignorado para evitar redundâncias no banco de dados.
+
+### **Armazenamento em JSON**
+- As informações dos alunos, como número de matrícula, nome completo, período, semestre e ID do curso, são armazenadas em um arquivo JSON para acesso estruturado e reutilização futura.
+
+### **Exportação para CSV**
+- Os registros de presença são organizados por data e exportados automaticamente para arquivos **CSV** no formato `dd-mm-yyyy.csv`. Isso facilita a análise e o compartilhamento dos dados.
